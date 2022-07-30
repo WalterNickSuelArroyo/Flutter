@@ -198,3 +198,6 @@ class Listview2Screen extends StatelessWidget {
   }
 }
 ```
+## 68. HomeScreen y rutas iniciales
+## 69. Diseño del HomeScreen
+## 70. Navegar a una nueva pantalla
