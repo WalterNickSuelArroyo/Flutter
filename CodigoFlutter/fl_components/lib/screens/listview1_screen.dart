@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Listview1Screen extends StatelessWidget {
+  final options = const [
+    'Megaman',
+    'Metal Gear',
+    'Super Smash',
+    'Final Fantasy'
+  ];
   const Listview1Screen({Key? key}) : super(key: key);
 
   @override
@@ -10,10 +16,13 @@ class Listview1Screen extends StatelessWidget {
           title: const Text('Listview Tipo 1'),
         ),
         body: ListView(
-          children: const [
-            Text('Hola Mundo'),
-            Text('Hola Mundo'),
-            Text('Hola Mundo'),
+          children: [
+            ...options
+                .map((e) => ListTile(
+                      title: Text(e),
+                      trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                    ))
+                .toList()
           ],
         ));
   }

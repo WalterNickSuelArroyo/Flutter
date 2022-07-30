@@ -96,3 +96,36 @@ class Listview1Screen extends StatelessWidget {
   }
 }
 ```
+## 65. Crear ListTiles a partir de una lista estatica
+- Si en caso nosotros salvemos nuestro proyecto y no se ve reflejado en el emulador, pues se puede deber a un error en el codigo que te lo marcara o subrayara o sino ocurre eso pues tambien se puede dar clic en "restart"
+```dart
+import 'package:flutter/material.dart';
+
+class Listview1Screen extends StatelessWidget {
+  final options = const [
+    'Megaman',
+    'Metal Gear',
+    'Super Smash',
+    'Final Fantasy'
+  ];
+  const Listview1Screen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Listview Tipo 1'),
+        ),
+        body: ListView(
+          children: [
+            ...options
+                .map((e) => ListTile(
+                      title: Text(e),
+                      trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                    ))
+                .toList()
+          ],
+        ));
+  }
+}
+```
